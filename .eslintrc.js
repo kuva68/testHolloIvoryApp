@@ -1,0 +1,20 @@
+
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  extends: ['@react-native-community', 'eslint-config-prettier'],
+  plugins: ['prettier', 'react-native'],
+  ignorePatterns: ['.eslintrc.js'],
+  parserOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'module',
+      jsx: true,
+      tsconfigRootDir: __dirname,
+      project: './tsconfig.json'
+  },
+  env: {
+      es6: true
+  },
+  rules: {'no-shadow': 'off',
+  '@typescript-eslint/no-shadow': ['error'],}
+};
