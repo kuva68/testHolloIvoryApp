@@ -1,15 +1,16 @@
-import React from 'react';
-import RootNavigator from './src/navigation';
-import {Provider} from 'react-redux';
-import store from './src/redux/store';
-import BlockerLoader from '@components/BlockerLoader'
-interface AppProps {}
+//import 'react-native-gesture-handler';
+import React, { FunctionComponent } from 'react';
+//import { enableScreens } from 'react-native-screens';
+import { Provider } from 'react-redux';
+import RootNavigator from './app/navigation/root-navigator';
+import { store } from './app/redux';
 
-const App: React.FC<AppProps> = () =>{
-    return  <Provider store={store}>
-                <BlockerLoader />
-                <RootNavigator {...store.getState()} />
-            </Provider>;
-} ;
+//enableScreens();
+
+const App: FunctionComponent = () => (
+  /* <Provider store={store}> */
+  <RootNavigator />
+  /*  </Provider> */
+);
 
 export default App;
