@@ -1,4 +1,4 @@
-package com.helloivory;
+package com.Kidnance;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -16,6 +16,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "HelloIvory";
+    return "Kidnance";
   }
 }

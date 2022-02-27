@@ -13,7 +13,9 @@ import  PhoneInput  from '@components/PhoneInput';
 
 export const PhoneNumberScreen: FunctionComponent<PhoneNumberProps> = ({navigation}) => {
   const back = () => navigation.goBack()
-
+  const nextPressHandler = () => {
+    navigation.navigate('SmsCheck')
+  }
   return (
     <SafeAreaView style={styles.root}>
       <StatusBar
@@ -36,7 +38,7 @@ export const PhoneNumberScreen: FunctionComponent<PhoneNumberProps> = ({navigati
       <MediumSizeButton
         bgColor={colors.PRIMARY}
         borderColor={colors.PRIMARY}
-        onPress={() => null}
+        onPress={nextPressHandler}
         title='Next'
         disabled={false}
         textColor={colors.WHITE}

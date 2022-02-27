@@ -1,20 +1,22 @@
 import React, { ReactNode } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { InitialScreen, StartScreen, PhoneNumberScreen } from '../screens';
-import HeaderLeft from '../components/DefaultHeader'
+import { 
+  InitialScreen, 
+  StartScreen, 
+  PhoneNumberScreen ,
+  SmsCheckScreen
+} from '../screens';
+
 //import { navigationRef } from '../services/navigator';
 
 type RootParams = {
   Initial: undefined;
   Start: undefined;
-  PhoneNumber: undefined
+  PhoneNumber: undefined;
+  SmsCheck: undefined
 };
-type RootNavigatorProp = {
-  navigation: {
-    goBack: () => ReactNode
-  }
-}
+
 
 const Stack = createNativeStackNavigator<RootParams>();
 
@@ -36,6 +38,11 @@ const RootNavigator = () => (
       <Stack.Screen
         name="PhoneNumber"
         component={PhoneNumberScreen}
+        options={{ headerLeft: () => null, headerShown: false }}
+      /> 
+      <Stack.Screen
+        name="SmsCheck"
+        component={SmsCheckScreen}
         options={{ headerLeft: () => null, headerShown: false }}
       /> 
     </Stack.Navigator>

@@ -4,5 +4,6 @@ export default {
   BLACK: '#333',
   BORDER: '#e2e2e2',
   DISABLE: 'rgba(209, 213, 219, 0.9)',
-  PLACEHOLDER: '#ACACAC'
+  PLACEHOLDER: '#ACACAC',
+  LIGHT_ORANGE: 'rgb(255, 202, 55)'
 };
