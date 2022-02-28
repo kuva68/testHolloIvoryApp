@@ -1,21 +1,21 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
-import colors from '../../utils/colors';
+import colors from '../../../utils/colors';
 
-interface PhoneNumberStyles {
+interface HomeScreenStyles {
   root: ViewStyle;
   buttonsView: ViewStyle;
   svgView: ViewStyle
-  title:  TextStyle
+
 }
 
-export default StyleSheet.create<PhoneNumberStyles>({
+export default StyleSheet.create<HomeScreenStyles>({
   root: {
     flex: 1,
     backgroundColor: colors.WHITE,
     justifyContent: 'space-evenly',
     alignItems: 'center',
     height: '100%',
-    paddingTop: 10
+    paddingTop: 20
   },
   buttonsView: {
     width: '100%',
@@ -25,12 +25,7 @@ export default StyleSheet.create<PhoneNumberStyles>({
   },
   svgView: {
     width: '100%',
-    paddingLeft: 0,
-    justifyContent: 'center',
-    alignItems: 'center'
+    paddingLeft: 50
   },
-  title: {
-    fontSize: 20
-  }
 
 });

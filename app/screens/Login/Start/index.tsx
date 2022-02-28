@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { View, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useUserAccount } from '../../redux/user';
-import { Text } from '../../components';
+import { useUserAccount } from '../../../redux/user';
+import { Text } from '../../../components';
 import { StartScreenProps } from './start.props';
 import styles from './start.styles';
-import icons from '../../utils/icons';
-import colors from '../../utils/colors';
-import { DefaultButton } from '../../components/buttons/defaultButton';
-import BottomPlaceHolder from '../../components/BottomPlaceHolder/BottomPlaceHolder';
+import icons from '../../../utils/icons';
+import colors from '../../../utils/colors';
+import { DefaultButton } from '../../../components/buttons/defaultButton';
+import BottomPlaceHolder from '../../../components/BottomPlaceHolder/BottomPlaceHolder';
 
 
 export const StartScreen: FunctionComponent<StartScreenProps> = ({navigation}) => {

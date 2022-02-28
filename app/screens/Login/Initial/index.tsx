@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
-import { Text } from '../../components';
+import { Text } from '../../../components';
 import { InitialScreenProps } from './initial.props';
 import styles from './initial.styles';
 

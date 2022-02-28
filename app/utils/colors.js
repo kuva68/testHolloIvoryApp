@@ -5,5 +5,6 @@ export default {
   BORDER: '#e2e2e2',
   DISABLE: 'rgba(209, 213, 219, 0.9)',
   PLACEHOLDER: '#ACACAC',
-  LIGHT_ORANGE: 'rgb(255, 202, 55)'
+  LIGHT_ORANGE: 'rgb(255, 202, 55)',
+  ERROR: 'red'
 };

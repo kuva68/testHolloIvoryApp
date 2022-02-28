@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import { View, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text } from '../../components';
+import { Text } from '../../../components';
 import { PhoneNumberProps } from './phoneNumber.props';
 import styles from './phoneNumber.styles';
-import icons from '../../utils/icons';
-import colors from '../../utils/colors';
-import MediumSizeButton from '../../components/buttons/mediumSizeButton';
-import BottomPlaceHolder from '../../components/BottomPlaceHolder/BottomPlaceHolder';
+import icons from '../../../utils/icons';
+import colors from '../../../utils/colors';
+import MediumSizeButton from '../../../components/buttons/mediumSizeButton';
+import BottomPlaceHolder from '../../../components/BottomPlaceHolder/BottomPlaceHolder';
 import DefaultHeader from '@components/DefaultHeader';
 import  PhoneInput  from '@components/PhoneInput';
 

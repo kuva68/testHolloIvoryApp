@@ -1,5 +1,5 @@
 import { StyleSheet, ViewStyle, TextStyle, TouchableOpacityProps } from 'react-native';
-import colors from '../../utils/colors';
+import colors from '../../../utils/colors';
 
 interface SmsCheck {
   title: TextStyle ,

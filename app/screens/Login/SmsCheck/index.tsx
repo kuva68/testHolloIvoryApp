@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
 import { View, StatusBar, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text } from '../../components';
+import { Text } from '../../../components';
 import { SmsCheckProps } from './smsCheck.props';
 import styles from './smsCheck.styles';
-import colors from '../../utils/colors';
-import MediumSizeButton from '../../components/buttons/mediumSizeButton';
-import BottomPlaceHolder from '../../components/BottomPlaceHolder/BottomPlaceHolder';
+import colors from '../../../utils/colors';
+import MediumSizeButton from '../../../components/buttons/mediumSizeButton';
+import BottomPlaceHolder from '../../../components/BottomPlaceHolder/BottomPlaceHolder';
 import DefaultHeader from '@components/DefaultHeader';
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
 import ThreeDotLoader from '@components/ThreeDotLoader';
@@ -16,6 +16,7 @@ export const SmsCheckScreen: FunctionComponent<SmsCheckProps> = ({navigation}) =
   const back = () => navigation.goBack()
   const PlaceHolder = (() =><View style={styles.circle}></View>)
   const editCode = (codeFromInput: string) => setCode(codeFromInput)
+  const onNextPress = () => navigation.navigate('FullName')
   return (
     <SafeAreaView style={styles.root}>
       <StatusBar
@@ -46,7 +47,7 @@ export const SmsCheckScreen: FunctionComponent<SmsCheckProps> = ({navigation}) =
       <MediumSizeButton
         bgColor={colors.PRIMARY}
         borderColor={colors.PRIMARY}
-        onPress={() => null}
+        onPress={onNextPress}
         title='Next'
         disabled={false}
         textColor={colors.WHITE}
