@@ -2,24 +2,21 @@ import React, { FunctionComponent, useState } from 'react';
 import {  StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text } from '@components';
-import { FullNameProps } from './fullName.props';
-import styles from './fullName.styles';
+import { UserNameProps } from './userName.props';
+import styles from './userName.styles';
 import colors from '../../../utils/colors';
 import MediumSizeButton from '@components/buttons/mediumSizeButton';
 import BottomPlaceHolder from '@components/BottomPlaceHolder/BottomPlaceHolder';
 import DefaultHeader from '@components/DefaultHeader';
 import FullNameInput from '@components/FullNameInput';
 
-export const FullNameScreen: FunctionComponent<FullNameProps> = ({navigation}) => {
-  const [fullName, setFullName] = useState<{firstName:string, lastName: string}>({firstName: '', lastName: ''})
-  const [errors, setErrors] = useState<{firstName:string | null, lastName: string | null}>({firstName: null, lastName: null})
+export const UserNameScreen: FunctionComponent<UserNameProps> = ({navigation}) => {
+  const [userName, setUserName] = useState<string>('')
+  const [errors, setErrors] = useState<string>('')
   const back = () => navigation.goBack()
   
-  const onNameChange = (prop?: string, nameFromInput?: string) => {
-    if(prop && nameFromInput)setFullName({...fullName, [prop]: nameFromInput})
-  }
-  const onNextPress = () =>{
-    navigation.navigate('UserName')
+  const onNameChange = ( nameFromInput?: string) => {
+    if(nameFromInput)setUserName(nameFromInput)
   }
   return (
     <SafeAreaView style={styles.root}>
@@ -32,21 +29,21 @@ export const FullNameScreen: FunctionComponent<FullNameProps> = ({navigation}) =
       <View style={styles.main}>
       <Text preset='title'style={styles.title}>What’s your full name?</Text>      
         <FullNameInput
-          variant='fullName'
+          variant='userName'
           textColor={colors.BLACK} 
           onNameChange={onNameChange} 
-          firstNamePlaceHolder='First name' 
-          lastNamePlaceHolder='Last name'
-          firstNameError={errors.firstName} 
-          lastNameError={errors.lastName}
-          description='Use real name'
+          firstNamePlaceHolder='@username' 
+          lastNamePlaceHolder=''
+          firstNameError={errors} 
+          lastNameError={null}
+          description='Change your username'
         />
       </View>
      
       <MediumSizeButton
         bgColor={colors.PRIMARY}
         borderColor={colors.PRIMARY}
-        onPress={onNextPress}
+        onPress={() => null}
         title='Next'
         disabled={false}
         textColor={colors.WHITE}
@@ -55,4 +52,4 @@ export const FullNameScreen: FunctionComponent<FullNameProps> = ({navigation}) =
     </SafeAreaView>
   );
 };
-export default FullNameScreen
+export default UserNameScreen

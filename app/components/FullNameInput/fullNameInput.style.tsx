@@ -11,7 +11,9 @@ interface fullNameInputStyle {
     text: TextStyle,
     inputContainer: ViewStyle;
     inputView: ViewStyle,
-    errorText: TextStyle
+    errorText: TextStyle,
+    singleInputView: ViewStyle,
+    singleInput: TextInputProps
 }
 
 export default StyleSheet.create<fullNameInputStyle
@@ -19,10 +21,11 @@ export default StyleSheet.create<fullNameInputStyle
    
     container: {
         width: '100%',
-
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     input: {
-        height: 40,
+        height: 45,
         padding: 13,
         paddingTop: 3,
         color: colors.BLACK,
@@ -31,13 +34,13 @@ export default StyleSheet.create<fullNameInputStyle
         marginHorizontal: 10,
         textAlign: 'center',
     
-        
-
-    },
+    
+        },
     privacyPolicy: {
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+       
     },
     privacyText: {
         fontSize: 13,
@@ -60,6 +63,18 @@ export default StyleSheet.create<fullNameInputStyle
     },
     errorText: {
         color: colors.ERROR
-    }
+    },
+    singleInputView: {
+        width: '90%',
+        alignItems: 'center',
+        padding: 2
+       
+    },
+   singleInput: {
+       fontSize: 21,
+       fontWeight: '900',
+       height: 60,
+      
+   }
 
 });

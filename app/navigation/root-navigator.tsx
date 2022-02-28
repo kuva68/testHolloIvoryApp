@@ -6,7 +6,8 @@ import {
   StartScreen, 
   PhoneNumberScreen ,
   SmsCheckScreen,
-  FullNameScreen
+  FullNameScreen,
+  UserNameScreen
 } from '../screens';
 
 //import { navigationRef } from '../services/navigator';
@@ -17,6 +18,7 @@ type RootParams = {
   PhoneNumber: undefined;
   SmsCheck: undefined;
   FullName: undefined;
+  UserName: undefined
 };
 
 
@@ -50,6 +52,11 @@ const RootNavigator = () => (
        <Stack.Screen
         name="FullName"
         component={FullNameScreen}
+        options={{ headerLeft: () => null, headerShown: false }}
+      /> 
+       <Stack.Screen
+        name="UserName"
+        component={UserNameScreen}
         options={{ headerLeft: () => null, headerShown: false }}
       /> 
 

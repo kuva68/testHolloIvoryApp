@@ -7,13 +7,20 @@ import colors from '../../utils/colors';
 
 
 export const FullNameInput: FunctionComponent<FullNameInputProps> =
-    ({  textColor, onNameChange, firstNamePlaceHolder, lastNamePlaceHolder, firstNameError, lastNameError }) => {
+    ({  textColor, 
+        onNameChange, 
+        firstNamePlaceHolder, 
+        lastNamePlaceHolder, 
+        firstNameError, 
+        lastNameError,
+        variant, 
+        description }) => {
       
 
         return (
 
             <View style={styles.container}>
-                <View style={styles.inputContainer}>
+               {variant === 'fullName' ? <View style={styles.inputContainer}>
                     <View style={styles.inputView}>
                         <TextInput
                             placeholder={firstNamePlaceHolder}
@@ -34,12 +41,23 @@ export const FullNameInput: FunctionComponent<FullNameInputProps> =
                         />
                         <Text style={styles.errorText}>{lastNameError ? '!!!' : null}</Text>
                     </View>
-                </View>
-                
+                </View> 
+        :       
+                <View style={styles.singleInputView}>
+                    <TextInput
+                            placeholder={firstNamePlaceHolder}
+                            placeholderTextColor={colors.BLACK}
+                            onChangeText={onNameChange}
+                            keyboardType='text'
+                            style={[styles.input, styles.singleInput]}
+                    />
+                <Text style={styles.errorText}>{lastNameError ? '!!!' : null}</Text>
+                </View>  
+         }
                
                 <View style={styles.privacyPolicy}>
                     <Text style={styles.privacyText}>
-                        Use real name
+                        {description}
                     </Text>
                    
                 </View>
